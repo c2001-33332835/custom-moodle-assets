@@ -1,4 +1,4 @@
-# custom-moodle-assets
+# Custom CSS theme for Monash Moodle
 
 ### Install guide:
 
@@ -10,3 +10,7 @@
 ### Note
 
 Network Security 101: is to not simply copy any script code from the internet and paste it in your machine unless you fully understand what it does.  
+
+### Screenshot
+
+![Sample screenshot for this theme](https://raw.githubusercontent.com/c2001-33332835/custom-moodle-assets/master/screenshot.png)
