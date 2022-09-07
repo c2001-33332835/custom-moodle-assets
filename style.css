@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/*CONFIG*/
+
+:root{
+	--global-gap: 20px;
+	--small-gap: 10px;
+	--header-size: 70px;
+	--header-banner-size: 210px;
+	
+	--paragraph-font-size: 13pt;
+	--header-font-size: 15pt;
+	
+	--header-banner-background: url(https://github.com/c2001-33332835/custom-moodle-assets/blob/master/banner.png?raw=true);
+	
+	--primary: #006144;
+	--primary-light: #E4FAF3;
+	--background-primary: #FFFFFF;
+	--background-secondary: #F8F8F8;
+	--foreground-primary: #323232;
+	--foreground-secondary: #000000;
+}
+
+/*Hide / Show Right Side bar*/
+#block-region-side-pre{
+	display:none;	
+}
+#region-main{
+	width: calc(100% - var(--global-gap)) !important;
+}
+
+
+
+/*overall layout*/
+
+*{
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.font-weight-bold {
+	font-weight: unset !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+}
+
+nav.navbar{
+	-webkit-box-shadow: unset;
+	box-shadow: unset;
+	top: var(--global-gap);
+	height: var(--header-size);
+	background-color: var(--background-secondary);
+}
+
+#page{
+	margin-top: calc(var(--header-size) + calc(var(--global-gap) * 2));
+	padding-left: 0px;
+	/*padding-right: 0px;*/
+}
+
+.header-title{
+	color: var(--primary);
+	text-shadow: unset;
+	font-weight: 200;
+}
+
+.header-banner{
+	margin-left: 36px;
+	margin-right: var(--global-gap);
+	height: var(--header-banner-size);
+	background-image: linear-gradient(
+      rgba(248, 248, 248, 0), 
+      rgba(248, 248, 248, 0), 
+      rgba(248, 248, 248, 0.95),
+      rgba(248, 248, 248, 1)
+    ), var(--header-banner-background) !important;
+}
+
+#nav-drawer{
+	top: calc(var(--header-size) + var(--global-gap));
+}
+
+[data-region="drawer"],
+nav.navbar .btn-secondary[aria-expanded="true"],
+.card-body, .block_myoverview{
+	background-color: transparent !important;
+}
+
+#page-my-index{
+	/*Global background*/
+	background: var(--background-primary) !important;
+}
+
+.header-banner .singlebutton{
+	/*"Customise this page" button on banner*/
+	display: none;
+}
+
+/*sidebar*/
+.list-group-item,
+.list-group-item.active{
+	border: 0px;
+	font-weight: 400 !important;
+}
+
+.list-group-item-action:hover,
+.list-group-item-action:focus,
+.list-group-item.active{
+	background-color: var(--primary-light);
+	color: var(--primary);
+}
+
+.list-group-item-action,
+nav.list-group li:has(a){
+	color: var(--foreground-primary);
+	font-size: var(--paragraph-font-size);
+	background-color: var(--background-secondary);
+}
+
+.list-group-item-action{
+	padding: 20px;
+}
+
+nav.list-group li div.list-group-item{
+	padding: var(--global-gap) 0px var(--global-gap) 10px;
+	font-size: var(--header-font-size);
+}
+
+nav.list-group li div i.icon{
+	display: none;
+}
+
+nav.list-group li a div i.icon{
+	display: unset;
+}
+
+/*dashboard overview*/
+div[data-region="filter"] {
+	margin-bottom: var(--global-gap);
+}
+
+div[data-region="filter"] button.dropdown-toggle{
+	border: 0px;
+	background-color: var(--background-secondary);
+	color: var(--foreground-primary);
+}
+div[data-region="filter"] button.dropdown-toggle:hover,
+div[data-region="filter"] button.dropdown-toggle:focus,
+div[data-region="filter"] button.dropdown-toggle:active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-secondary.dropdown-toggle
+{
+	/*I have no idea what this selector is btw, but it works :)*/
+	background-color: var(--primary-light);
+	color: var(--primary);
+	border: 0px;
+	outline: none;
+}
+
+.card.dashboard-card{
+	border: 4px var(--background-secondary) solid;
+	width: calc(25% - .5rem) !important;
+}
+
+.card.dashboard-card .progress{
+	border: none !important;
+	background: var(--primary-light) !important;
+}
+
+.card.dashboard-card .progress .progress-bar.bar{
+	background-color: var(--primary);
+}
+
+
+.card-img.dashboard-card-img{
+	display: none;
+}
+
+.block_recentlyaccessedcourses{
+	margin-left: 16px;
+	border: 0px;
+}
+
+.block_recentlyaccessedcourses .dashboard-card-deck{
+	justify-content: start !important;
+}
+
+.block_recentlyaccessedcourses>.card-body{
+	padding-left: 0px !important;
+}
+
+.block_recentlyaccessedcourses .paging-bar-container{
+	flex-direction: row-reverse;
+}
+
+.block_recentlyaccessedcourses .paging-bar-container .pagination{
+	margin: 0px;
+	margin-top: -10px;
+}
+
+.block_recentlyaccessedcourses h5.card-title{
+	margin-left: 120px;
+	margin-top: 10px;
+	font-size: var(--header-font-size);
+	font-weight: 400;
+}
+
+.block_recentlyaccessedcourses .paging-bar-container .pagination .page-item{
+	margin-right: var(--small-gap);
+}
+.block_recentlyaccessedcourses .paging-bar-container .pagination .page-item a{
+	border: 0px;
+	background: var(--background-secondary);
+	outline: none;
+	border: 3px var(--background-secondary) solid;
+}
+.block_recentlyaccessedcourses .paging-bar-container .pagination .page-item a:hover{
+	background: var(--primary-light);
+}
+.block_recentlyaccessedcourses .paging-bar-container .pagination .page-item a span{
+	background: transparent;
+	color: var(--foreground-secondary);
+}
+.block_recentlyaccessedcourses .paging-bar-container .pagination .page-item.disabled a{
+	background-color: var(--background-primary);
+}
+
+.block_html strong{
+	font-weight: 500!important;
+}
+
+.block_html a{
+	color: var(--primary);
+}
+
+.block_html{
+	border: 0px;
+}
+
+#page-footer{
+	background-color: var(--background-secondary) !important;
+}
+#page-footer a{
+	color: var(--foreground-secondary)!important;
+	text-decoration: underline!important;
+	text-decoration-color: var(--foreground-secondary)!important;
+}
+
+#page-footer .copyright>div:before{
+	background-color: var(--foreground-secondary)!important;
+}
+
+/*Course page general layout*/
+#region-main{
+	-webkit-box-shadow: unset !important;
+	box-shadow: unset !important;
+	border: 0px;
+}
